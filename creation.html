@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Creations - Ganesh Chitralaya</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.2/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Slideshow styling */
+    .slideshow-container {
+      position: relative;
+      width: 50%;
+      max-width: 30%;
+      margin: auto;
+    }
+
+    .mySlides {
+      display: none;
+      width: 100%;
+      height: auto;
+    }
+
+    /* Make images responsive and fit well on different screen sizes */
+    .mySlides img {
+      width: 100%;
+      height: auto;
+      max-width: 100%;
+      object-fit: cover; /* This ensures images cover the area without distortion */
+    }
+
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.3s ease;
+      border-radius: 0 3px 3px 0;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .next {
+      right: 0;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Responsive image handling for smaller devices */
+    @media (max-width: 768px) {
+      .mySlides img {
+        max-height: 400px; /* Set a max-height for images on smaller screens */
+        object-fit: contain; /* Adjust the images to fit within the set height */
+      }
+    }
+
+  </style>
+</head>
+<body class="bg-gray-100">
+
+  <!-- Navbar -->
+  <nav class="bg-gradient-to-r from-indigo-600 to-purple-600 shadow-md">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="#" class="flex items-center">
+        <img src="logo.png" alt="Ganesh Chitralaya Logo" class="h-8 w-8 mr-2">
+        <span class="text-2xl font-bold text-white">Ganesh Chitralaya</span>
+      </a>
+      <div class="space-x-4 ml-auto">
+        <a class="text-white hover:text-gray-300" href="index.html">Home</a>
+        <a class="text-white hover:text-gray-300" href="aboutus.html">About</a>
+        <a class="text-white hover:text-gray-300" href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Creations Section -->
+  <section class="container mx-auto px-4 py-16">
+    <h2 class="text-4xl font-extrabold text-center mb-8 text-indigo-800">Our Creations</h2>
+    
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="11.jpg" alt="Creation 1">
+      </div>
+      <div class="mySlides fade">
+        <img src="12.jpg" alt="Creation 2">
+      </div>
+      <div class="mySlides fade">
+        <img src="13.jpg" alt="Creation 3">
+      </div>
+      <div class="mySlides fade">
+        <img src="14.jpg" alt="Creation 4">
+      </div>
+      <div class="mySlides fade">
+        <img src="15.jpg" alt="Creation 5">
+      </div>
+      <div class="mySlides fade">
+        <img src="16.jpg" alt="Creation 5">
+      </div>
+      <div class="mySlides fade">
+        <img src="17.jpg" alt="Creation 5">
+      </div>
+      <div class="mySlides fade">
+        <img src="18.jpg" alt="Creation 5">
+      </div>
+      <div class="mySlides fade">
+        <img src="19.jpg" alt="Creation 5">
+      </div>
+      <div class="mySlides fade">
+        <img src="20.jpg" alt="Creation 5">
+      </div>
+      <div class="mySlides fade">
+        <img src="21.jpg" alt="Creation 5">
+      </div>
+      <div class="mySlides fade">
+        <img src="22.jpg" alt="Creation 5">
+      </div>
+      <div class="mySlides fade">
+        <img src="23.jpg" alt="Creation 5">
+      </div>
+     
+      
+ 
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-indigo-600 text-white text-center py-4">
+    <p>&copy; 2019 Ganesh Chitralaya | All rights reserved</p>
+  </footer>
+
+  <script>
+    // JavaScript for the image slideshow functionality
+    let slideIndex = 0;
+
+    function showSlides() {
+      let slides = document.getElementsByClassName("mySlides");
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      slides[slideIndex-1].style.display = "block";
+      setTimeout(showSlides, 1000); // Change image every 10 seconds
+    }
+
+    function plusSlides(n) {
+      clearTimeout();
+      slideIndex += n;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      if (slideIndex < 1) {slideIndex = slides.length}
+      showSlides();
+    }
+
+    showSlides(); // Initial call to start the slideshow
+  </script>
+
+</body>
+</html>
