@@ -9,25 +9,22 @@
     /* Slideshow styling */
     .slideshow-container {
       position: relative;
-      width: 50%;
-      max-width: 30%;
+      width: 100%;
+      max-width: 600px; /* Limit max width on larger screens */
       margin: auto;
     }
 
     .mySlides {
       display: none;
-      width: 100%;
-      height: auto;
     }
 
-    /* Make images responsive and fit well on different screen sizes */
     .mySlides img {
       width: 100%;
       height: auto;
-      max-width: 100%;
-      object-fit: cover; /* This ensures images cover the area without distortion */
+      object-fit: cover; /* Ensure images cover the container without distortion */
     }
 
+    /* Navigation buttons */
     .prev, .next {
       cursor: pointer;
       position: absolute;
@@ -51,14 +48,16 @@
       background-color: rgba(0, 0, 0, 0.8);
     }
 
-    /* Responsive image handling for smaller devices */
+    /* Adjust for smaller screens */
     @media (max-width: 768px) {
+      .slideshow-container {
+        width: 90%; /* Make the slideshow fit smaller screens */
+      }
       .mySlides img {
-        max-height: 400px; /* Set a max-height for images on smaller screens */
-        object-fit: contain; /* Adjust the images to fit within the set height */
+        max-height: 400px; /* Prevent images from becoming too tall */
+        object-fit: contain; /* Fit images without distortion */
       }
     }
-
   </style>
 </head>
 <body class="bg-gray-100">
@@ -99,42 +98,46 @@
       <div class="mySlides fade">
         <img src="15.jpg" alt="Creation 5">
       </div>
-      <div class="mySlides fade">
-        <img src="16.jpg" alt="Creation 5">
-      </div>
-      <div class="mySlides fade">
-        <img src="17.jpg" alt="Creation 5">
-      </div>
-      <div class="mySlides fade">
-        <img src="18.jpg" alt="Creation 5">
-      </div>
-      <div class="mySlides fade">
-        <img src="19.jpg" alt="Creation 5">
-      </div>
-      <div class="mySlides fade">
-        <img src="20.jpg" alt="Creation 5">
-      </div>
-      <div class="mySlides fade">
-        <img src="21.jpg" alt="Creation 5">
-      </div>
-      <div class="mySlides fade">
-        <img src="22.jpg" alt="Creation 5">
-      </div>
-      <div class="mySlides fade">
-        <img src="23.jpg" alt="Creation 5">
-      </div>
-     
-      
- 
+      <!-- New Images -->
+    <div class="mySlides fade">
+      <img src="16.jpg" alt="Creation 6">
+    </div>
+    <div class="mySlides fade">
+      <img src="17.jpg" alt="Creation 7">
+    </div>
+    <div class="mySlides fade">
+      <img src="18.jpg" alt="Creation 8">
+    </div>
+    <div class="mySlides fade">
+      <img src="19.jpg" alt="Creation 9">
+    </div>
+    <div class="mySlides fade">
+      <img src="20.jpg" alt="Creation 10">
+    </div>
+    <div class="mySlides fade">
+      <img src="21.jpg" alt="Creation 11">
+    </div>
+    <div class="mySlides fade">
+      <img src="22.jpg" alt="Creation 12">
+    </div>
+    <div class="mySlides fade">
+      <img src="23.jpg" alt="Creation 13">
+    </div>
+    <div class="mySlides fade">
+      <img src="25.jpg" alt="Creation 13">
+    </div>
+      <!-- Add more images as needed -->
+    </div>
   </section>
 
   <!-- Footer -->
   <footer class="bg-indigo-600 text-white text-center py-4">
     <p>&copy; 2019 Ganesh Chitralaya | All rights reserved</p>
+    <p><a href="https://brijeshkumarmohanty.vercel.app" class="underline hover:text-gray-300" target="_blank">This website is made by Brijesh</a></p>
+
   </footer>
 
   <script>
-    // JavaScript for the image slideshow functionality
     let slideIndex = 0;
 
     function showSlides() {
@@ -143,21 +146,17 @@
         slides[i].style.display = "none";
       }
       slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}
-      slides[slideIndex-1].style.display = "block";
-      setTimeout(showSlides, 1000); // Change image every 10 seconds
+      if (slideIndex > slides.length) { slideIndex = 1; }
+      slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 3000); // Change image every 3 seconds
     }
 
-    function plusSlides(n) {
-      clearTimeout();
-      slideIndex += n;
-      if (slideIndex > slides.length) {slideIndex = 1}
-      if (slideIndex < 1) {slideIndex = slides.length}
+    function changeSlide(n) {
+      slideIndex += n - 1;
       showSlides();
     }
 
-    showSlides(); // Initial call to start the slideshow
+    showSlides();
   </script>
-
 </body>
 </html>
